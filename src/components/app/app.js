@@ -4,7 +4,7 @@ import { HomePage, CartPage } from '../pages';
 
 
 import './app.css';
-import withBookstoreService from '../hoc';
+import  { withBookstoreService } from '../hoc';
 
 const App = ({ bookstoreService }) => {
     console.log(bookstoreService.getBooks());
