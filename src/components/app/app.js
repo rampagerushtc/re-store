@@ -4,15 +4,17 @@ import { HomePage, CartPage } from '../pages';
 
 
 import './app.css';
-import  { withBookstoreService } from '../hoc';
+import { withBookstoreService } from '../hoc';
 
 const App = ({ bookstoreService }) => {
     console.log(bookstoreService.getBooks());
     return (
-        <Switch>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/cart/:id" component={CartPage} />
-        </Switch>
+        <main role="main" className="container">
+            <Switch>
+                <Route path="/" exact component={HomePage} />
+                <Route path="/cart/:id" component={CartPage} />
+            </Switch>
+        </main>
 
     )
 }
