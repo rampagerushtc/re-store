@@ -8,13 +8,12 @@ import './app.css';
 import { withBookstoreService } from '../hoc';
 
 const App = ({ bookstoreService }) => {
-    console.log(bookstoreService.getBooks());
     return (
         <main role="main" className="container">
             <ShopHeader numItems={5} total={200} />
             <Switch>
                 <Route path="/" exact component={HomePage} />
-                <Route path="/cart/:id" component={CartPage} />
+                <Route path="/cart" component={CartPage} />
             </Switch>
         </main>
 
