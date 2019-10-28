@@ -1,6 +1,6 @@
 const booksLoaded = (newBooks) => {
     return {
-        type: 'FETCH_BOOKS_SUCCES',
+        type: 'FETCH_BOOKS_SUCCESS',
         payload: newBooks
     };
 };
@@ -13,14 +13,12 @@ const booksRequested = () => {
 
 const booksError = (error) => {
     return {
-        type: 'FETCH_BOOKS_ERROR_FAILURE',
+        type: 'FETCH_BOOKS_FAILURE',
         payload: error
     }
 }
 
 const fetchBooks = (bookstoreService, dispatch) => () => {
-    console.log('Fetching Books');
-
     dispatch(booksRequested());
     bookstoreService.getBooks()
         .then((data) => dispatch(booksLoaded(data)))
